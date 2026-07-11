@@ -1,0 +1,8 @@
+name: "Jednostavan QR kod (Generator i skener)"
+short_name: "QR kod"
+description: "Napravite i skenirajte QR kod jednim klikom."
+generate: "Napravi QR kod"
+scan: "Skeniraj QR kod"
+open: "Otvoriti web stranicu?"
+scan_error: "Nemoguće dekodirati QR kod:"
+load_image_error: "Nemoguće učitati sliku."

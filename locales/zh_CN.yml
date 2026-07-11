@@ -1,0 +1,8 @@
+name: "简单二维码（生成与扫描）"
+short_name: "二维码"
+description: "一键生成和扫描二维码。"
+generate: "生成二维码"
+scan: "扫描二维码"
+open: "打开网站？"
+scan_error: "无法解码二维码："
+load_image_error: "无法加载图片。"

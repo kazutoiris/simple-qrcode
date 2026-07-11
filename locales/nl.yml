@@ -1,0 +1,8 @@
+name: "Eenvoudige QR-code (Generator en scanner)"
+short_name: "QR-code"
+description: "Genereer en scan QR-code met één klik."
+generate: "QR-code genereren"
+scan: "QR-code scannen"
+open: "Website openen?"
+scan_error: "Kan QR-code niet decoderen:"
+load_image_error: "Kan afbeelding niet laden."

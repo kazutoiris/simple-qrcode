@@ -1,24 +1,37 @@
+import QRCode from 'qrcode';
 import './style.css';
-import typescriptLogo from '@/assets/typescript.svg';
-import wxtLogo from '/wxt.svg';
-import { setupCounter } from '@/components/counter';
 
-document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
-  <div>
-    <a href="https://wxt.dev" target="_blank">
-      <img src="${wxtLogo}" class="logo" alt="WXT logo" />
-    </a>
-    <a href="https://www.typescriptlang.org/" target="_blank">
-      <img src="${typescriptLogo}" class="logo vanilla" alt="TypeScript logo" />
-    </a>
-    <h1>WXT + TypeScript</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the WXT and TypeScript logos to learn more
-    </p>
-  </div>
-`;
+const canvasElement = document.getElementById('qrcode') as HTMLCanvasElement;
+const inputElement = document.getElementById('content') as HTMLInputElement;
 
-setupCounter(document.querySelector<HTMLButtonElement>('#counter')!);
+async function makeCode(text: string): Promise<void> {
+  try {
+    await QRCode.toCanvas(canvasElement, text, {
+      errorCorrectionLevel: 'L',
+      margin: 0,
+      width: 250,
+    });
+    inputElement.value = text;
+    delete canvasElement.dataset.error;
+  } catch (e: unknown) {
+    const errorMessage = e instanceof Error ? e.message : String(e);
+    canvasElement.dataset.error = errorMessage;
+  }
+}
+
+document.title = i18n.t('short_name');
+
+inputElement.oninput = () => makeCode(inputElement.value);
+
+window.addEventListener('blur', () => {
+  window.close();
+});
+
+const urlParams = new URLSearchParams(location.search);
+const data = urlParams.get('data');
+if (data) {
+  makeCode(data);
+} else {
+  browser.tabs.query({ active: true, currentWindow: true })
+    .then((tabs) => makeCode(tabs[0].url || window.location.href))
+}

@@ -1,0 +1,8 @@
+name: "Enostaven QR koda (Generator in skener)"
+short_name: "QR koda"
+description: "Ustvarite in preglejte QR kodo z enim klikom."
+generate: "Ustvari QR kodo"
+scan: "Preglej QR kodo"
+open: "Odpri spletno stran?"
+scan_error: "Ni bilo mogoče dekodirati QR kode:"
+load_image_error: "Ni bilo mogoče naložiti slike."

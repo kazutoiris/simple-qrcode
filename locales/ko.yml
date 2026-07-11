@@ -1,0 +1,8 @@
+name: "간단 QR 코드 (생성기 및 스캐너)"
+short_name: "QR 코드"
+description: "한 번의 클릭으로 QR 코드를 생성하고 스캔합니다."
+generate: "QR 코드 생성"
+scan: "QR 코드 스캔"
+open: "웹사이트 열기?"
+scan_error: "QR 코드를 디코딩할 수 없습니다:"
+load_image_error: "이미지를 로드할 수 없습니다."

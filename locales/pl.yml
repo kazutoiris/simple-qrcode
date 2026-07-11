@@ -1,0 +1,8 @@
+name: "Prosty kod QR (Generator i skaner)"
+short_name: "Kod QR"
+description: "Wygeneruj i zeskanuj kod QR jednym kliknięciem."
+generate: "Wygeneruj kod QR"
+scan: "Zeskanuj kod QR"
+open: "Otwórz stronę?"
+scan_error: "Nie można zdekodować kodu QR:"
+load_image_error: "Nie można załadować obrazu."

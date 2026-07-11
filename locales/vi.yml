@@ -1,0 +1,8 @@
+name: "Mã QR Đơn Giản (Trình tạo và Quét)"
+short_name: "Mã QR"
+description: "Tạo và quét mã QR trong một cú nhấp chuột."
+generate: "Tạo Mã QR"
+scan: "Quét Mã QR"
+open: "Mở Trang Web?"
+scan_error: "Không thể giải mã mã QR:"
+load_image_error: "Không thể tải hình ảnh."

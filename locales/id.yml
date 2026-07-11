@@ -1,0 +1,8 @@
+name: "Kode QR Sederhana (Generator dan Pindai)"
+short_name: "Kode QR"
+description: "Buat dan pindai kode QR dengan satu klik."
+generate: "Buat Kode QR"
+scan: "Pindai Kode QR"
+open: "Buka Website?"
+scan_error: "Tidak dapat mendekode Kode QR:"
+load_image_error: "Tidak dapat memuat gambar."

@@ -1,0 +1,8 @@
+name: "シンプル QRコード（ジェネレーターとスキャナー）"
+short_name: "QRコード"
+description: "ワンクリックでQRコードを生成・スキャンします。"
+generate: "QRコードを生成"
+scan: "QRコードをスキャン"
+open: "ウェブサイトを開く？"
+scan_error: "QRコードのデコードに失敗しました："
+load_image_error: "画像の読み込みに失敗しました。"

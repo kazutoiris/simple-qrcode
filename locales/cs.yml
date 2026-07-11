@@ -1,0 +1,8 @@
+name: "Jednoduchý QR kód (Generátor a skener)"
+short_name: "QR kód"
+description: "Vytvořte a naskenujte QR kód jedním kliknutím."
+generate: "Vytvořit QR kód"
+scan: "Naskenovat QR kód"
+open: "Otevřít webovou stránku?"
+scan_error: "Nelze dekódovat QR kód:"
+load_image_error: "Nelze načíst obrázek."

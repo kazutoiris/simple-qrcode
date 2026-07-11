@@ -1,0 +1,8 @@
+name: "Kod QR Mudah (Penjana dan Pemindai)"
+short_name: "Kod QR"
+description: "Cipta dan skim kod QR dalam satu klik."
+generate: "Cipta Kod QR"
+scan: "Skim Kod QR"
+open: "Buka Laman Web?"
+scan_error: "Tidak dapat mendekod Kod QR:"
+load_image_error: "Tidak dapat memuatkan imej."

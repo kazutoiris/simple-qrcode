@@ -1,0 +1,8 @@
+name: "Lihtne QR-kood (Genereerija ja skanner)"
+short_name: "QR-kood"
+description: "Genereeri ja skaneeri QR-kood ühe klõpsuga."
+generate: "Genereeri QR-kood"
+scan: "Skaneeri QR-kood"
+open: "Ava veebileht?"
+scan_error: "QR-koodi ei õnnestunud dekodeerida:"
+load_image_error: "Pildi laadimine ebaõnnestus."

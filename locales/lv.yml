@@ -1,0 +1,8 @@
+name: "Vienkāršs QR kods (Ģenerators un skeneris)"
+short_name: "QR kods"
+description: "Izveidojiet un skenējiet QR kodu ar vienu klikšķi."
+generate: "Izveidot QR kodu"
+scan: "Skenēt QR kodu"
+open: "Atvērt tīmekļa vietni?"
+scan_error: "Neizdevās dekodēt QR kodu:"
+load_image_error: "Neizdevās ielādēt attēlu."

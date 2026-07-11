@@ -1,0 +1,8 @@
+name: "Enkel QR-kod (Generator och skanner)"
+short_name: "QR-kod"
+description: "Skapa och skanna QR-kod med ett klick."
+generate: "Skapa QR-kod"
+scan: "Skanna QR-kod"
+open: "Öppna webbplats?"
+scan_error: "Kunde inte dekoda QR-kod:"
+load_image_error: "Kunde inte ladda bild."

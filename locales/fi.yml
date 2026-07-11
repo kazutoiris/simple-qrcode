@@ -1,0 +1,8 @@
+name: "Yksinkertainen QR-koodi (Generaattori ja skanneri)"
+short_name: "QR-koodi"
+description: "Luo ja skanna QR-koodin yhdellä klikkauksella."
+generate: "Luo QR-koodi"
+scan: "Skanna QR-koodi"
+open: "Avaa verkkosivu?"
+scan_error: "QR-koodin purkaminen epäonnistui:"
+load_image_error: "Kuvan lataaminen epäonnistui."

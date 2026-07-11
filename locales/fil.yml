@@ -1,0 +1,8 @@
+name: "Simple QR Code (Generator at Scanner)"
+short_name: "QR Code"
+description: "Generate at i-scan QR code sa isang pag-click."
+generate: "Generate QR Code"
+scan: "Scan QR Code"
+open: "Buksan ang Website?"
+scan_error: "Hindi makapag-decode ng QR Code:"
+load_image_error: "Hindi makapag-load ng imahen."

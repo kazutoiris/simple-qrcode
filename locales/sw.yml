@@ -1,0 +1,8 @@
+name: "Kodi Rahisi ya QR (Generator na Skeneri)"
+short_name: "Kodi ya QR"
+description: "Tengeneza na skanya kod ya QR kwa kubofya mara moja."
+generate: "Tengeneza Kodi ya QR"
+scan: "Skanya Kodi ya QR"
+open: "Fungua Tovuti?"
+scan_error: "Imeshindwa kufungua kod ya QR:"
+load_image_error: "Imeshindwa kupakia picha."

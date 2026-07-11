@@ -1,0 +1,8 @@
+name: "Egyszerű QR kód (Generátor és szkennelő)"
+short_name: "QR kód"
+description: "Hozzon létre és szkenneljen QR kódot egy kattintással."
+generate: "QR kód generálása"
+scan: "QR kód szkennelése"
+open: "Weboldal megnyitása?"
+scan_error: "Nem sikerült dekódolni a QR kódot:"
+load_image_error: "Nem sikerült betölteni a képet."

@@ -1,0 +1,8 @@
+name: "Cod QR Simplu (Generator și Scaner)"
+short_name: "Cod QR"
+description: "Generează și scanează codul QR cu un singur click."
+generate: "Generează Cod QR"
+scan: "Scanare Cod QR"
+open: "Deschide Site-ul Web?"
+scan_error: "Nu s-a putut decoda codul QR:"
+load_image_error: "Nu s-a putut încărca imaginea."

@@ -1,0 +1,8 @@
+name: "קוד QR פשוט (מחולל וסורק)"
+short_name: "קוד QR"
+description: "צור וסרוק קוד QR בלחיצה אחת."
+generate: "צור קוד QR"
+scan: "סרוק קוד QR"
+open: "לפתוח אתר?"
+scan_error: "לא ניתן לפענח קוד QR:"
+load_image_error: "לא ניתן לטעון תמונה."

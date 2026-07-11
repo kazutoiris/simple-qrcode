@@ -1,0 +1,8 @@
+name: "Paprastas QR kodas (Generavimas ir skaneris)"
+short_name: "QR kodas"
+description: "Sukurkite ir nuskenuokite QR kodą vienu paspaudimu."
+generate: "Sukurti QR kodą"
+scan: "Nuskanuoti QR kodą"
+open: "Atverti svetainę?"
+scan_error: "Nepavyko iškoduoti QR kodo:"
+load_image_error: "Nepavyko įkelti paveikslėlio."

@@ -1,0 +1,8 @@
+name: "كود QR البسيط (المنشئ والماسح)"
+short_name: "كود QR"
+description: "قم بإنشاء ومسح رمز QR في نقرة واحدة."
+generate: "إنشاء رمز QR"
+scan: "مسح رمز QR"
+open: "فتح الموقع؟"
+scan_error: "تعذر فك ترميز رمز QR:"
+load_image_error: "تعذر تحميل الصورة."

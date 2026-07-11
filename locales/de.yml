@@ -1,0 +1,8 @@
+name: "Einfacher QR-Code (Generator und Scanner)"
+short_name: "QR-Code"
+description: "Erstellen und scannen Sie QR-Codes mit einem Klick."
+generate: "QR-Code generieren"
+scan: "QR-Code scannen"
+open: "Website öffnen?"
+scan_error: "QR-Code konnte nicht decodiert werden:"
+load_image_error: "Bild konnte nicht geladen werden."

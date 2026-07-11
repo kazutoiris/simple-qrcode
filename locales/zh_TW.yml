@@ -1,0 +1,8 @@
+name: "簡單二維碼（生成與掃描）"
+short_name: "二維碼"
+description: "一鍵生成和掃描二維碼。"
+generate: "生成二維碼"
+scan: "掃描二維碼"
+open: "打開網站？"
+scan_error: "無法解碼二維碼："
+load_image_error: "無法加載圖片。"

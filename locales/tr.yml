@@ -1,0 +1,8 @@
+name: "Basit QR Kodu (Oluşturucu ve Tarayıcı)"
+short_name: "QR Kodu"
+description: "Tek bir tıklamayla QR kodu oluşturun ve tarayın."
+generate: "QR Kodu Oluştur"
+scan: "QR Kodu Tara"
+open: "Web Sitesini Aç?"
+scan_error: "QR kodu çözülemedi:"
+load_image_error: "Görsel yüklenemedi."

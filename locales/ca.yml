@@ -1,0 +1,8 @@
+name: "Codi QR Simple (Generador i escàner)"
+short_name: "Codi QR"
+description: "Genera i escaneja un codi QR amb un clic."
+generate: "Genera un codi QR"
+scan: "Escaneja un codi QR"
+open: "Vols obrir el lloc web?"
+scan_error: "No es pot descodificar el codi QR:"
+load_image_error: "No es pot carregar la imatge."
