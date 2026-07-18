@@ -15,16 +15,20 @@ export default defineConfig({
     permissions: [
       'contextMenus',
       'activeTab',
-      'scripting',
-      'offscreen'
+      'scripting'
+    ],
+    web_accessible_resources: [
+      {
+        resources: ['iframe.html'],
+        matches: ['<all_urls>'],
+      },
     ],
     browser_specific_settings: {
       gecko: {
         id: '{b87def58-2ef0-4467-922a-70226e48d354}',
         data_collection_permissions: {
-          required: [],
-          optional: [],
-        }
+          required: ["none"],
+        },
       }
     },
     host_permissions: ['<all_urls>'],

@@ -1,6 +1,6 @@
 import { Browser, browser, i18n } from '#imports';
-import { OffscreenRequest, OffscreenResponse } from '@/global';
-import QrScanner from 'qr-scanner';
+import { ContentScriptRequest, ContentScriptResponse } from '@/global';
+import jsQR from 'jsqr';
 
 async function scanImage(imageUrl: string): Promise<string> {
   return new Promise((resolve, reject) => {
@@ -18,11 +18,11 @@ async function scanImage(imageUrl: string): Promise<string> {
           return;
         }
         ctx.drawImage(img, 0, 0);
-
-        const result = await QrScanner.scanImage(canvas, { returnDetailedScanResult: true });
-        resolve(result.data || '');
+        const result = jsQR(ctx.getImageData(0, 0, canvas.width, canvas.height).data, canvas.width, canvas.height);
+        if (result) resolve(result.data);
+        reject(new Error(i18n.t('scan_error')));
       } catch (error) {
-        reject(error instanceof Error ? error : new Error(String(error)));
+        reject(error);
       }
     };
 
@@ -35,7 +35,7 @@ async function scanImage(imageUrl: string): Promise<string> {
 }
 
 browser.runtime.onMessage.addListener(
-  (message: OffscreenRequest, _sender: Browser.runtime.MessageSender, sendResponse: (response?: OffscreenResponse) => void): boolean => {
+  (message: ContentScriptRequest, _sender: Browser.runtime.MessageSender, sendResponse: (response?: ContentScriptResponse) => void): boolean => {
     scanImage(message.imageUrl)
       .then((result) => sendResponse({ success: true, result }))
       .catch((error: Error) => sendResponse({ success: false, error: error.message }));

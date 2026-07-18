@@ -1,9 +1,18 @@
 import { browser, type Browser, i18n } from "#imports";
-import { OffscreenRequest, OffscreenResponse } from "@/global";
 
 declare function defineBackground(config: any): any;
 
 export default defineBackground(() => {
+  interface ScanRequest {
+    type: 'scan';
+    imageUrl: string;
+  }
+
+  interface ScanResponse {
+    success: boolean;
+    result?: string;
+    error?: string;
+  }
 
   async function openWindow(data: string): Promise<void> {
     const win = await browser.windows.create({
@@ -20,7 +29,9 @@ export default defineBackground(() => {
   }
 
   async function generateContextMenu(info: Browser.contextMenus.OnClickData): Promise<void> {
+    console.log(info);
     const url = info.linkUrl || info.selectionText || info.srcUrl || info.frameUrl || info.pageUrl;
+    console.log(url);
     await openWindow(url || '');
   }
 
@@ -35,26 +46,28 @@ export default defineBackground(() => {
 
   async function scanContextMenu(info: Browser.contextMenus.OnClickData): Promise<void> {
     try {
-      const result = await scanQRCodeOffscreen(info.srcUrl || '');
+      const result = await scanQRCodeInContentScript(info.srcUrl || '');
       await pageInjectPrompt(isValidUrl(result) ? i18n.t('open') : '', result, false);
     } catch (e) {
       await pageInjectPrompt(i18n.t('scan_error'), (e as Error).message, true);
     }
   }
 
-  async function scanQRCodeOffscreen(imageUrl: string): Promise<string> {
-    const has = await browser.offscreen.hasDocument();
-    if (!has) {
-      await browser.offscreen.createDocument({
-        url: 'offscreen.html',
-        reasons: ['DOM_PARSER'],
-        justification: i18n.t('description'),
-      });
-      await new Promise((r) => setTimeout(r, 500));
+  async function scanQRCodeInContentScript(imageUrl: string): Promise<string> {
+    const [activeTab] = await browser.tabs.query({ active: true, currentWindow: true });
+    if (!activeTab?.id) {
+      throw new Error('No active tab found');
     }
-    const response = await browser.runtime.sendMessage<OffscreenRequest, OffscreenResponse>({ imageUrl });
-    if (response.success) return response.result || '';
-    throw new Error(response.error);
+
+    const response = await browser.tabs.sendMessage<ScanRequest, ScanResponse>(activeTab.id, {
+      type: 'scan',
+      imageUrl,
+    } as ScanRequest);
+
+    if (response.success) {
+      return response.result || '';
+    }
+    throw new Error(response.error || 'Scan failed');
   }
 
   async function pageInjectPrompt(title: string, result: string, isError: boolean): Promise<boolean> {
@@ -102,14 +115,8 @@ export default defineBackground(() => {
   browser.contextMenus.onClicked.addListener((info, _tab) => {
     if (info.menuItemId === 'generate-qrcode') {
       generateContextMenu(info);
-    }
-    else if (info.menuItemId === 'scan-qrcode') {
+    } else if (info.menuItemId === 'scan-qrcode') {
       scanContextMenu(info);
     }
-  });
-
-  browser.runtime.onSuspend.addListener(async () => {
-    const has = await browser.offscreen.hasDocument();
-    if (has) await browser.offscreen.closeDocument();
   });
 });

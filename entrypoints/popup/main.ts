@@ -1,21 +1,22 @@
 import QRCode from 'qrcode';
 import './style.css';
 
+const msgElement = document.getElementById('msg') as HTMLSpanElement;
 const canvasElement = document.getElementById('qrcode') as HTMLCanvasElement;
 const inputElement = document.getElementById('content') as HTMLInputElement;
 
 async function makeCode(text: string): Promise<void> {
   try {
+    inputElement.value = text;
     await QRCode.toCanvas(canvasElement, text, {
       errorCorrectionLevel: 'L',
       margin: 0,
       width: 250,
     });
-    inputElement.value = text;
-    delete canvasElement.dataset.error;
+    delete msgElement.dataset.error;
   } catch (e: unknown) {
     const errorMessage = e instanceof Error ? e.message : String(e);
-    canvasElement.dataset.error = errorMessage;
+    msgElement.dataset.error = errorMessage;
   }
 }
 

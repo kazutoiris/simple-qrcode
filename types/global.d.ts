@@ -1,9 +1,9 @@
-export interface OffscreenResponse {
+export interface ContentScriptResponse {
   success: boolean;
   result?: string;
   error?: string;
 }
 
-export interface OffscreenRequest {
+export interface ContentScriptRequest {
   imageUrl: string;
 }
