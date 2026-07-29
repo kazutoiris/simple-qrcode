@@ -19,7 +19,8 @@
     "@typescript-eslint/eslint-plugin": "^8.63.0",
     "@typescript-eslint/parser": "^8.63.0",
     "@wxt-dev/auto-icons": "^1.1.1",
-    "eslint": "^10.6.0"
+    "eslint": "^10.6.0",
+    "publish-browser-extension": "^6.0.0"
   },
   "dependencies": {
     "@wxt-dev/i18n": "^0.2.6",
