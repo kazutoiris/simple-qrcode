@@ -40,7 +40,6 @@ The generated files should match the contents of the submitted extension zip:
 ├── manifest.json          # Extension manifest
 ├── background.js          # Background script
 ├── popup.html             # Popup page
-├── offscreen.html         # Offscreen document
 └── ...                    # Other files
 
 ```
